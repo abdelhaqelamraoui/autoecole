@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Autoecole</title>
+</head>
+<body class="container-fluid p-0 d-flex flex-column justify-content-between">
+
+  <header class="">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href=".">Autoecole</a>
+        </div>
+        </nav>
+  </header>
+
+  <main class="row flex-fill m-0">
+
+    <!-- the sidebar -->
+    <div class="col-2 p-0">
+      <ul class="list-group rounded-0 h-100 border border-2 border-top-0 h-100 border border-2 border-top-0">
+        <li class="list-group-item"><a href="index.html" id="acceuil" class="link">Acceuil</a></li>
+        <li class="list-group-item"><a href="candidats.html" id="candidats" class="link">Candidats</a></li>
+        <li class="list-group-item"><a href="ajouter.html" id="ajouter" class="link">Ajouter</a></li>
+        <li class="list-group-item mt-auto bg-light"><a href="dashboard/" id="dashboard" class="link">Dashboard</a></li>
+      </ul>
+    </div>
+    
+    <!-- the view -->
+    <div id="view-container" class="col p-0">
+
+      <div class="container w-75 p-3 border border-1 rounded border-dark m-auto mt-3">
+        <div class="mb-3 p-4 border rounded">
+          <div class="row mb-1">
+            <div class="col">
+              <label for="nom" class="form-label">Nom</label>
+              <input type="text" id="nom" class="form-control">
+            </div>
+            <div class="col">
+              <label for="prenom" class="form-label">Prénom</label>
+              <input type="text" id="prenom" class="form-control">
+            </div>
+          </div>
+          <div class="row mb-1">
+            <div class="col">
+              <label for="cin" class="form-label">CIN</label>
+              <input type="text" id="cin" class="form-control">
+            </div>
+            <div class="col">
+              <label for="telephone" class="form-label">Téléphone</label>
+              <input type="text" id="telephone" class="form-control">
+            </div>
+          </div>
+    
+        </div>
+    
+    
+        <div class="mb-3 p-4 border rounded">
+          <div class="row mb-1">
+            <div class="col">
+              <label for="categorie" class="form-label">Catégorie</label>
+              <select name="" id="categorie" class="form-select"></select>
+            </div>
+            <div class="col">
+              <label for="avance" class="form-label">Avance</label>
+              <input type="number" id="avance" class="form-control">
+            </div>
+          </div>
+          <div class="row mb-1">
+            <div class="col">
+              <label for="nombre-seances" class="form-label">Nombre de séance</label>
+              <input type="text" id="nombre-seances" class="form-control" value="0">
+            </div>
+            <div class="col">
+              <label for="date-inscription" class="form-label">Date d'inscription</label>
+              <input type="date" id="date-inscription" class="form-control">
+            </div>
+          </div>
+    
+        </div>
+    
+        <div class="mb-3 text-center">
+          <button class="btn btn-primary px-5" id="ajouter">Ajouter</button>
+        </div>    
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="bg-dark text-light text-center">the footer</footer>
+  
+</body>
+
+<script src="assets/js/ajouter.js"></script>
+<script src="assets/js/global.js"></script>
+</html>

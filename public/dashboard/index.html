@@ -1,0 +1,113 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <title>Autoecole</title>
+</head>
+<body class="container-fluid p-0 d-flex flex-column justify-content-between">
+
+  <header class="">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href=".">Autoecole</a>
+        </div>
+        </nav>
+  </header>
+
+  <main class="row flex-fill m-0">
+
+    <!-- the sidebar -->
+    <div class="col-2 p-0">
+      <ul class="list-group rounded-0 h-100 border border-2 border-top-0 h-100">
+
+        <li class="list-group-item"><a href="../index.html" id="acceuil" class="link">Acceuil</a></li>
+        <li class="list-group-item"><a href="../candidats.html" id="candidats" class="link">Candidats</a></li>
+        <li class="list-group-item"><a href="../ajouter.html" id="ajouter" class="link">Ajouter</a></li>
+
+        <li class="list-group-item bg-light"><a href="categories.html" class="text-decoration-none">Catégories</a></li>
+        <li class="list-group-item bg-light"><a href="statistiques.html" class="text-decoration-none">Statistiques</a></li>
+        <li class="list-group-item bg-light"><a href="utilisateurs.html" class="text-decoration-none">Utilisateurs</a></li>
+        <li class="list-group-item bg-light"><a href="preferences.html" class="text-decoration-none">Préferences</a></li>
+
+        <li class="list-group-item mt-auto bg-light"><a href=".." id="exit" class="link">Exit</a></li>
+      
+      </ul>
+    </div>
+    
+    <!-- the view -->
+    <div id="view-container" class="col p-0">
+
+      <div class="container w-100 h-100 p-4">
+        
+        <main class="container-fluid row p-0 m-0">
+
+          <!-- <div class="col-2 p-0 bg-info">
+            <ul class="list-group rounded-0 h-100 border border-2 border-top-0">
+              <li class="list-group-item bg-light"><a href="categories.html" class="text-decoration-none">Catégories</a></li>
+              <li class="list-group-item bg-light"><a href="#" class="text-decoration-none">Statistiques</a></li>
+              <li class="list-group-item bg-light"><a href="#" class="text-decoration-none">Utilisateurs</a></li>
+              <li class="list-group-item bg-light"><a href="#" class="text-decoration-none">Préferences</a></li>
+            </ul>
+          </div> -->
+      
+      
+          <div class="col">
+            <div class="container">
+              <table class="table p-2">
+        
+                <thead class="table-success">
+                  <tr id="4" class="text-center">
+                    <th>N°</th>
+                    <th>Libellé</th>
+                    <th>Prix</th>
+                    <th>Nombre de séances Pratiques</th>
+                    <th></th>
+                  </tr>
+                </thead>
+          
+                <tbody id="list-categories">
+          
+                  <tr class="align-middle">
+                    <td class="fw-bold text-center p-2">1</td>
+                    <td class=" p-2">B</td>
+                    <td class="text-center p-2">2000</td>
+                    <td class="text-center p-2">20</td>
+                    <td class="text-center p-2">
+                      <button class="btn btn-warning btn-sm" id="4" onclick="modifierSeancePratique(this)">Modifier</button>
+                    </td>
+                  </tr>
+                  <tr class="align-middle">
+                    <td class="fw-bold text-center p-2">1</td>
+                    <td class=" p-2">B</td>
+                    <td class="text-center p-2">2000</td>
+                    <td class="text-center p-2">20</td>
+                    <td class="text-center p-2">
+                      <button class="btn btn-warning btn-sm" id="4" onclick="modifierSeancePratique(this)">Modifier</button>
+                    </td>
+                  </tr>
+          
+                  
+                </tbody>
+              </table>  
+            </div>
+      
+          </div>
+      
+        </main>
+    
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="bg-dark text-light text-center">the footer</footer>
+  
+</body>
+
+<script src="../assets/js/dashboard.js"></script>
+<script src="../assets/js/global.js"></script>
+
+</html>

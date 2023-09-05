@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Autoecole</title>
+</head>
+<body class="container-fluid p-0 d-flex flex-column justify-content-between">
+
+  <header class="">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href=".">Autoecole</a>
+        </div>
+        </nav>
+  </header>
+
+  <main class="row flex-fill m-0">
+
+    <!-- the sidebar -->
+    <div class="col-2 p-0">
+      <ul class="list-group rounded-0 h-100 border border-2 border-top-0 h-100">
+        <li class="list-group-item"><a href="index.html" id="acceuil" class="link">Acceuil</a></li>
+        <li class="list-group-item"><a href="candidats.html" id="candidats" class="link">Candidats</a></li>
+        <li class="list-group-item"><a href="ajouter.html" id="ajouter" class="link">Ajouter</a></li>
+        <li class="list-group-item mt-auto bg-light"><a href="dashboard/" id="dashboard" class="link">Dashboard</a></li>
+      </ul>
+    </div>
+    
+    <!-- the view -->
+    <div id="view-container" class="col p-0">
+
+      <div class="container w-100 h-100 p-4">
+        
+        <div class="row">
+
+          <div class="col">
+            
+            <table class="table table-rounded border p-2  position-sticky top-0">
+              <colgroup>
+                <col class="col-5">
+                <col class="col">
+              </colgroup>
+              <thead class="table-success border">
+                <tr>
+                  <td colspan="2" class="text-center fw-semibold py-2">Informations du condidat</td>
+                </tr>
+              </thead>
+  
+              <tbody>
+                <tr class="align-middle">
+                  <th>Nom</th>
+                  <td id="nom-prenom"></td>
+                </tr>
+                <tr class="align-middle">
+                  <th>CIN</th>
+                  <td id="cin"></td>
+                </tr>
+                <tr class="align-middle">
+                  <th>Téléphone</th>
+                  <td id="telephone"></td>
+                </tr>
+                <tr class="align-middle">
+                  <th>Catégorie</th>
+                  <td id="categorie"></td>
+                </tr>
+                <tr class="align-middle">
+                  <th>Avance</th>
+                  <td id="avance"></td>
+                </tr>
+                <tr class="align-middle">
+                  <th>Reste</th>
+                  <td id="reste"></td>
+                </tr>
+                <tr class="align-middle">
+                  <th>Nombre de séances pratiques</th>
+                  <td id="nombre-seances" class="align-middle"></td>
+                </tr>
+                <tr class="align-middle">
+                  <th>Date d'inscription</th>
+                  <td id="date-inscription"></td>
+                </tr>
+              </tbody>
+            </table>
+  
+            <div class="mb-3 mt-5 d-flex justify-content-between gap-4">
+              <button id="mofifier" class="btn btn-primary w-25">Modifier</button>
+              <button id="ajouter-avance" class="btn btn-success w-25">Ajouter une avance</button>
+              <button id="marquer-seance" class="btn btn-warning w-25">Marquer séance</button>
+              <button id="supprimer" class="btn btn-danger w-25">Supprimer</button>
+            </div>
+  
+          </div>
+  
+          <div class="col-3">
+            <h6 class="bg-primary text-light rounded py-2 text-center">Les séances pratiques</h6>
+            <ol id="dates-seances-pratiques" class="list-group list-group-numbered">
+            </ol>
+          </div>
+  
+        </div>
+    
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="bg-dark text-light text-center">the footer</footer>
+  
+</body>
+
+<script src="assets/js/consulter.js"></script>
+<script src="assets/js/global.js"></script>
+
+</html>

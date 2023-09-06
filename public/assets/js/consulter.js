@@ -80,7 +80,7 @@ function renderCandidatInformation(promise) {
 
 function getPrixCategorie(libelle) {
   
-  fetch(`../app/api.php/categorie?libelle=${libelle}`)
+  return fetch(`../app/api.php/categorie?libelle=${libelle}`)
   .then(response => {
     if(! response.ok) {
       throw new Error("Cannot fetch the categorie from the server")
@@ -97,12 +97,26 @@ function getPrixCategorie(libelle) {
 
 function fetchCandidatAllInformation(id) {
 
-  return fetch(`../app/api.php/candidat?id=${id}`)
-  .then(response => {
+  return fetch(`../app/api.php/candidat?id=${id}`).then(response => {
+    
     if(! response.ok) {
       throw new Error("Cannot fetch data from the server")
     }
     return response.json()
+  }).then(data => {
+
+    const cat = data["categorie"];
+    fetch(`../app/api.php/categories?libelle=${cat}`)
+    .then(response => {
+      if(! response.ok) {
+        throw new Error("Cannot fetch the categorie from the server")
+      }
+      return response.json();
+    }).then(data => {
+      localStorage.setItem('max-nbr-seances', data["nombreSeancesPratiques"])
+    })
+
+    return data
   })
 }
 
@@ -145,6 +159,14 @@ document.getElementById('marquer-seance').addEventListener('click', e => {
 
   const nbrSeanceTd = document.getElementById('nombre-seances')
   const nbrSeance = parseInt(nbrSeanceTd.textContent)
+  const maxNbrSeances = parseInt(localStorage.getItem('max-nbr-seances'))
+
+  console.log(nbrSeance, maxNbrSeances);
+
+  if(nbrSeance >= maxNbrSeances) {
+    window.alert('Le max de seances est atteint !')
+    return
+  }
 
   const formData = new FormData()
 

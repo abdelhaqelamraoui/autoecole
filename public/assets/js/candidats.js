@@ -20,8 +20,8 @@ function loadCandidats() {
   */
  tbody.innerHTML = ''
 //  TODO :  add the adequat URL
-// console.log(fetchDataFromServer('../app/api.php'));
- renderJsonData(fetchDataFromServer('../app/api.php'))
+// console.log(fetchDataFromServer('../app/api.php/candidats'));
+ renderJsonData(fetchDataFromServer('../app/api.php/candidats'))
  
 }
 

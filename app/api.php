@@ -18,9 +18,7 @@ if (Functions::is_get()) {
   $path = parse_url($_SERVER['PATH_INFO'] ?? '')["path"];
   $args = explode('/', $path);
   $ressourse = $args[1] ?? ''; // beacause the path starts with / then the first is empty string
-  
-  $model = null;
-  
+   
   
   $queryString = $_SERVER['QUERY_STRING'];
   parse_str($queryString, $params);
@@ -29,11 +27,8 @@ if (Functions::is_get()) {
   
   $paramFunctions = null;
 
+  $defaultFunction = 'getAllCandidatsInfos';
 
-  if (empty($params)) {
-    Functions::echoJSONData($model->getAllCandidatsInfos());
-    exit;
-  }
 
   switch ($ressourse) {
 
@@ -46,6 +41,7 @@ if (Functions::is_get()) {
         'categorie' => 'getCandidatsByCategorie',
         'pattern' => 'getCandidatsInformationByPattern'
       ];
+
       break;
     
     case 'candidat':
@@ -55,8 +51,10 @@ if (Functions::is_get()) {
       ];
       break;
 
-    case 'categorie':
+    case 'categories':
       $model = new CategorieModel(new MysqlDataProvider());
+      $defaultFunction = 'getAllCategories';
+
       $paramFunctions = [
         'id' => 'getCategorieById', // the one that returs seances array too
         'libelle' => 'getCategorieByLibelle', // the one that returs seances array too
@@ -64,8 +62,14 @@ if (Functions::is_get()) {
       break;
       
     default:
+      Functions::echoJSONData('Specify a ressource in the URL!');
+      exit;
+  }
 
-      Functions::echoJSONData($model->getAllCandidatsInfos());
+  if (empty($params)) {
+    // var_dump($model->$defaultFunction());
+    Functions::echoJSONData($model->$defaultFunction());
+    exit;
   }
 
   $firstKey = array_keys($params)[0];
@@ -73,6 +77,8 @@ if (Functions::is_get()) {
   if (isset($function)) {
     $data = $model->$function($params[$firstKey]);
     Functions::echoJSONData($data);
+  } else {
+
   }
 
 

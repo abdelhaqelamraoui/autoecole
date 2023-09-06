@@ -58,4 +58,9 @@ class Functions
     echo json_encode($data);
   }
 
+  
+  public static function sanitize(string $str) {
+    return trim($str);
+  }
+
 }

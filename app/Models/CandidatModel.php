@@ -96,6 +96,19 @@ class CandidatModel
     return $this->dataProvider->ajouterAvance((int)$id, (int) $montant);
   }
 
+  
+
+  
+
+  
+  public function addCandidat($nom, $prenom, $cin, $telephone, $categorie, $avance, $dateInscription)
+  {
+    $nom = strtoupper($nom);
+    $prenom = lcfirst($prenom);
+    return $this->dataProvider->addCandidat($nom, $prenom, $cin, $telephone, $categorie, $avance, $dateInscription);
+  }
+
+
 
 
 }

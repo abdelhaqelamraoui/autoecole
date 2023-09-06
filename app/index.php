@@ -48,6 +48,25 @@ if(Functions::is_post())
 
   if(isset($_POST['add']))
   {
+    $nom = Functions::sanitize($_POST['nom']);
+    $prenom = Functions::sanitize($_POST['prenom']);
+    $cin = Functions::sanitize($_POST['cin']);
+    $telephone = Functions::sanitize($_POST['telephone']);
+    $categorie = Functions::sanitize($_POST['categorie']);
+    $avance = Functions::sanitize($_POST['avance']);
+    // $nombreSancesPratiques = Functions::sanitize($_POST['nombre-seances']);
+    $dateInscription = Functions::sanitize($_POST['date-inscription']);
+
+    $candidatModel->addCandidat(
+      $nom,
+      $prenom,
+      $cin,
+      $telephone,
+      $categorie,
+      $avance,
+      // $nombreSancesPratiques,
+      $dateInscription
+    );
 
   }
 

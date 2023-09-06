@@ -31,27 +31,27 @@
     <!-- the view -->
     <div id="view-container" class="col p-0">
 
-      <div class="container w-75 p-3 border border-1 rounded border-dark m-auto mt-3">
+      <form class="container w-75 p-3 border border-1 rounded border-dark m-auto mt-3">
         <div class="mb-3 p-4 border rounded">
           <div class="row mb-1">
             <div class="col">
               <label for="nom" class="form-label">Nom</label>
-              <input type="text" id="nom" class="form-control">
+              <input type="text" id="nom" class="form-control border-secondary" placeholder="Hind" required>
             </div>
             <div class="col">
               <label for="prenom" class="form-label">Prénom</label>
-              <input type="text" id="prenom" class="form-control">
+              <input type="text" id="prenom" class="form-control border-secondary" placeholder="El Amraoui" required>
             </div>
           </div>
           <div class="row mb-1">
             <div class="col">
               <label for="cin" class="form-label">CIN</label>
-              <input type="text" id="cin" class="form-control">
+              <input type="text" id="cin" class="form-control border-secondary" placeholder="U112233" required>
             </div>
             <div class="col">
               <label for="telephone" class="form-label">Téléphone</label>
-              <input type="text" id="telephone" class="form-control">
-            </div>
+              <input type="text" id="telephone" class="form-control border-secondary" placeholder="0611223344" >
+            </div> 
           </div>
     
         </div>
@@ -61,32 +61,34 @@
           <div class="row mb-1">
             <div class="col">
               <label for="categorie" class="form-label">Catégorie</label>
-              <select name="" id="categorie" class="form-select"></select>
+              <select id="categorie" class="form-select border-secondary" required></select>
             </div>
             <div class="col">
               <label for="avance" class="form-label">Avance</label>
-              <input type="number" id="avance" class="form-control">
+              <input type="number" id="avance" class="form-control border-secondary" placeholder="0" value="0">
             </div>
           </div>
           <div class="row mb-1">
             <div class="col">
-              <label for="nombre-seances" class="form-label">Nombre de séance</label>
-              <input type="text" id="nombre-seances" class="form-control" value="0">
+              <label for="nombre-seances" class="form-label">Nombre de séances</label>
+              <input type="text" id="nombre-seances" class="form-control border-secondary" value="0" readonly>
             </div>
             <div class="col">
               <label for="date-inscription" class="form-label">Date d'inscription</label>
-              <input type="date" id="date-inscription" class="form-control">
+              <input type="date" id="date-inscription" class="form-control border-secondary" readonly>
             </div>
           </div>
     
         </div>
-    
+
+       
         <div class="mb-3 text-center">
-          <button class="btn btn-primary px-5" id="ajouter">Ajouter</button>
-        </div>    
+          <button class="btn btn-primary px-5" id="add">Ajouter</button>
+        </div> 
+        
       </div>
 
-    </div>
+    </form>
 
   </main>
 
